@@ -105,7 +105,7 @@ function App() {
                 setIserror(true)
                 console.log(errorMessages);
             })
-        api.get("cards?locale=en_US&class=warlock%2Cdruid&manaCost=7&rarity=legendary&pageSize=10&access_token=" + API_KEY)
+        api.get("cards?locale=en_US&class=warlock%2Cdruid&manaCost=7%2C8%2C9%2C10&rarity=legendary&pageSize=10&access_token=" + API_KEY)
             .then(res => {
                 setData(res.data.cards)
             })
@@ -120,7 +120,7 @@ function App() {
     //but not as flexible, but since this is just a quick demo app,
     //it will do for now
     return (<MaterialTable
-        title="Legendary 7 Mana Druid and Warlock Cards Of Awesomeness"
+        title="Legendary 7+ Mana Druid and Warlock Cards Of Awesomeness"
         columns={columns}
         data={data}
         icons={tableIcons}
